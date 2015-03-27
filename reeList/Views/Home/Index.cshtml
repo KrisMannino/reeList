@@ -1,0 +1,67 @@
+﻿<div id="body">
+    <div ng-controller="myCntrl" class="divList">
+
+        <button ng-click="AddMovieDiv()" class="btn-success">
+            Add Movie
+        </button>
+
+        <div class="divList .container">
+            
+            <table cellpadding="12">
+                <tr>
+                   
+                    <td class =".col-md-4"><b>Title</b></tdclass>
+                    <td class=".col-md-4"><b>Year</b></td>
+                    <td class=".col-md-4"><b>Rated</b></td>
+                    <td class=".col-md-4"><b>Actions</b></td>
+                </tr>
+                <tr ng-repeat="movie in movies">
+                   
+                    <td class=".col-md-4">
+                        {{movie.Title}}
+                    </td>
+                    <td class=".col-md-4">
+                        {{movie.Year}}
+                    </td>
+                    <td class=".col-md-4">
+                        {{movie.Rated}}
+                    </td>
+                    <td>
+                        <button ng-click="editMovie(movie)" class="btn-info">Edit</button>
+                        <button ng-click="deleteMovie(movie)" class="btn-danger">Delete</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div ng-show="divMovie" .container>
+            <p class="divHead">{{Action}} Movie</p>
+            <table>
+
+                <tr class=".col-md-4">
+                    <td><b>Title</b></td>
+                    <td>
+                        <input type="text" ng-model="movieTitle" />
+                    </td>
+                </tr>
+                <tr class=".col-md-4">
+                    <td><b>Year</b></td>
+                    <td>
+                        <input type="text" ng-model="movieYear" />
+                    </td>
+                </tr>
+                <tr class=".col-md-4">
+                    <td><b>Rated</b></td>
+                    <td>
+                        <input type="text" ng-model="movieRated" />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="button" class="btn-success" value="Save" ng-click="AddUpdateMovie()" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
